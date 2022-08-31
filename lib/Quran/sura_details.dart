@@ -61,8 +61,6 @@ class _suraDetailsState extends State<suraDetails> {
         await rootBundle.loadString('assets/files/${index + 1}.txt');
     List<String> Lines = content.trim().split('\n');
     verses = Lines;
-    TextSpan(text: "$verses", style: TextStyle());
-    print(verses);
     setState(() {});
   }
 }
