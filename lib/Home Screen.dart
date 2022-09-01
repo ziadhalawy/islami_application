@@ -1,3 +1,4 @@
+import 'package:application_islami/Azkar/azkar.dart';
 import 'package:application_islami/Hadith/hadith.dart';
 import 'package:application_islami/Quran/quran.dart';
 import 'package:application_islami/Radio/radio.dart';
@@ -40,6 +41,11 @@ class _homeScreenState extends State<homeScreen> {
             BottomNavigationBarItem(
                 icon: ImageIcon(
                     color: Colors.black,
+                    AssetImage('assets/icons/backgroundimage.png')),
+                label:  "الأذكار"),
+            BottomNavigationBarItem(
+                icon: ImageIcon(
+                    color: Colors.black,
                     AssetImage('assets/icons/quran-ic.png')),
                 label: AppLocalizations.of(context)!.quran_icon),
             BottomNavigationBarItem(
@@ -65,5 +71,5 @@ class _homeScreenState extends State<homeScreen> {
 
   int selectedIndex = 0;
 
-  List<Widget> itemBar = [quranTap(), hadithTap(), sibhaTap(), radioTab()];
+  List<Widget> itemBar = [azkar(),quranTap(), hadithTap(), sibhaTap(), radioTab()];
 }
