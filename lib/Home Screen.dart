@@ -1,8 +1,11 @@
+import 'package:application_islami/Azkar/azkar.dart';
 import 'package:application_islami/Hadith/hadith.dart';
 import 'package:application_islami/Quran/quran.dart';
 import 'package:application_islami/Radio/radio.dart';
 import 'package:application_islami/Tasbih/tasbih.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/intl_localizations.dart';
+
 
 class homeScreen extends StatefulWidget {
   static const routeName = 'Home Screen';
@@ -22,8 +25,7 @@ class _homeScreenState extends State<homeScreen> {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
-          title: Text(
-              "Islami"),
+          title: Text(AppLocalizations.of(context)!.app_title),
         ),
         body: Container(
           padding: EdgeInsets.fromLTRB(0, 48, 0, 0),
@@ -39,23 +41,28 @@ class _homeScreenState extends State<homeScreen> {
             BottomNavigationBarItem(
                 icon: ImageIcon(
                     color: Colors.black,
+                    AssetImage('assets/icons/backgroundimage.png')),
+                label:  "الأذكار"),
+            BottomNavigationBarItem(
+                icon: ImageIcon(
+                    color: Colors.black,
                     AssetImage('assets/icons/quran-ic.png')),
-                label: 'Quran'),
+                label: AppLocalizations.of(context)!.quran_icon),
             BottomNavigationBarItem(
                 icon: ImageIcon(
                     color: Colors.black,
                     AssetImage('assets/icons/hadeth-ic.png')),
-                label: 'Hadith'),
+                label: AppLocalizations.of(context)!.hadith_icon),
             BottomNavigationBarItem(
                 icon: ImageIcon(
                     color: Colors.black,
                     AssetImage('assets/icons/sebha-ic.png')),
-                label: 'Sibha'),
+                label:  AppLocalizations.of(context)!.sibha_icon),
             BottomNavigationBarItem(
                 icon: ImageIcon(
                     color: Colors.black,
                     AssetImage('assets/icons/radio-ic.png')),
-                label: 'Radio'),
+                label:  AppLocalizations.of(context)!.radio_icon),
           ],
         ),
       ),
@@ -64,5 +71,5 @@ class _homeScreenState extends State<homeScreen> {
 
   int selectedIndex = 0;
 
-  List<Widget> itemBar = [quranTap(), hadithTap(), sibhaTap(), radioTab()];
+  List<Widget> itemBar = [azkar(),quranTap(), hadithTap(), sibhaTap(), radioTab()];
 }
