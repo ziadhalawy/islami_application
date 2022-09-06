@@ -1,3 +1,4 @@
+import 'package:application_islami/Colors.dart';
 import 'package:application_islami/Hadith/hadith_name_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -10,25 +11,26 @@ class hadithTap extends StatefulWidget {
 
 class _hadithTapState extends State<hadithTap> {
   List<Hadith> hadithList = [];
+
   @override
   Widget build(BuildContext context) {
     if (hadithList.isEmpty) readFiles();
     return hadithList.isEmpty
         ? Center(child: CircularProgressIndicator())
         : ListView.separated(
-            itemCount: hadithList.length,
-            itemBuilder: (_, index) {
-              return (hadithNameWidget(hadithList[index]));
-            },
-            separatorBuilder: (_, index) {
-              return Container(
-                margin: EdgeInsets.symmetric(horizontal: 30),
-                color: Theme.of(context).primaryColor,
+      itemCount: hadithList.length,
+      itemBuilder: (_, index) {
+        return (hadithNameWidget(hadithList[index]));
+      },
+      separatorBuilder: (_, index) {
+        return Container(
+          margin: EdgeInsets.symmetric(horizontal: 30),
+                color: myColors.colorYellow,
                 width: double.infinity,
                 height: 2,
               );
-            },
-          );
+      },
+    );
     /*
     Container(
       child: Column(
@@ -44,7 +46,7 @@ class _hadithTapState extends State<hadithTap> {
 
   void readFiles() async {
     String fileContent =
-        await rootBundle.loadString('assets/hadithtxt/ahadeth.txt');
+    await rootBundle.loadString('assets/hadithtxt/ahadeth.txt');
     List<Hadith> hadithOfFile = [];
     List<String> allHadith = fileContent.trim().split('#');
     for (int i = 0; i < allHadith.length; i++) {
@@ -63,5 +65,6 @@ class _hadithTapState extends State<hadithTap> {
 class Hadith {
   String title;
   String content;
+
   Hadith(this.content, this.title);
 }

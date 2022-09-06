@@ -21,7 +21,7 @@ Hadith hadith;
         padding: EdgeInsets.symmetric(vertical: 2),
         child: Text(
           hadith.title,
-          style: Theme.of(context).textTheme.headline5,
+          style: Theme.of(context).textTheme.headline2,
         ),
       ),
     );

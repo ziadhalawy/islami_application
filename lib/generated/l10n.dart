@@ -99,6 +99,86 @@ class S {
       args: [],
     );
   }
+
+  /// `Language`
+  String get language_label {
+    return Intl.message(
+      'Language',
+      name: 'language_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Theme`
+  String get theme_label {
+    return Intl.message(
+      'Theme',
+      name: 'theme_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get settings_icon {
+    return Intl.message(
+      'Settings',
+      name: 'settings_icon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Azkar`
+  String get azkar_icon {
+    return Intl.message(
+      'Azkar',
+      name: 'azkar_icon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `English`
+  String get english_lang {
+    return Intl.message(
+      'English',
+      name: 'english_lang',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Arabic`
+  String get arabic_lang {
+    return Intl.message(
+      'Arabic',
+      name: 'arabic_lang',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Light`
+  String get light_theme {
+    return Intl.message(
+      'Light',
+      name: 'light_theme',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dark`
+  String get dark_theme {
+    return Intl.message(
+      'Dark',
+      name: 'dark_theme',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -113,10 +193,8 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
 
   @override
   bool isSupported(Locale locale) => _isSupported(locale);
-
   @override
   Future<S> load(Locale locale) => S.load(locale);
-
   @override
   bool shouldReload(AppLocalizationDelegate old) => false;
 

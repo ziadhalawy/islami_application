@@ -3,5 +3,13 @@
 "radio_icon":"إذاعة",
 "sibha_icon":"سبحة",
 "hadith_icon":"حديث",
-"quran_icon":"قرآن"
+"quran_icon":"قرآن",
+"language_label":"اللغة",
+"theme_label":"الإضاءة",
+"settings_icon":"الإعدادات",
+"azkar_icon":"الأذكار",
+"english_lang":"الإنجليزية",
+"arabic_lang":"العربية",
+"light_theme":"فاتح",
+"dark_theme":"غامق"
 }

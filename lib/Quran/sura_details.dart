@@ -2,6 +2,9 @@ import 'package:application_islami/Quran/sura_format.dart';
 import 'package:application_islami/Quran/sura_name_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
+
+import '../provider_settings/provider.dart';
 
 class suraDetails extends StatefulWidget {
   static const routeName = 'Sura Details';
@@ -19,10 +22,13 @@ class _suraDetailsState extends State<suraDetails> {
     if (verses.isEmpty) {
       readFiles(args.index);
     }
+    var settingsProvider = Provider.of<providerSettings>(context);
     return Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('assets/icons/backgroundimage.png'),
+                image: settingsProvider.isDarkMode() == true
+                    ? AssetImage('assets/icons/background_dark.png')
+                    : AssetImage('assets/icons/backgroundimage.png'),
                 fit: BoxFit.fill)),
         child: Scaffold(
             backgroundColor: Colors.transparent,
@@ -43,7 +49,7 @@ class _suraDetailsState extends State<suraDetails> {
                       child: ListView.separated(
                           itemBuilder: (_, index) {
                             return suraFormat(
-                                "{${index + 1}}${verses[index]}", index);
+                                "${verses[index]}{${index + 1}}", index);
                           },
                           itemCount: verses.length,
                           separatorBuilder: (_, index) {

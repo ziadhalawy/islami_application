@@ -1,6 +1,9 @@
 import 'package:application_islami/Colors.dart';
 import 'package:application_islami/Quran/sura_name_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../provider_settings/provider.dart';
 
 class quranTap extends StatelessWidget {
   List<String> names = [
@@ -122,6 +125,8 @@ class quranTap extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var settingsProvider = Provider.of<providerSettings>(context);
+
     return Container(
       /*decoration: BoxDecoration(
         color: myColors.pageColor,
@@ -136,11 +141,14 @@ class quranTap extends StatelessWidget {
             width: double.infinity,
             decoration: BoxDecoration(
                 border: Border.symmetric(
-                    horizontal:
-                        BorderSide(color: myColors.primaryColor, width: 3))),
+                    horizontal: BorderSide(
+                        color: settingsProvider.isDarkMode() == true
+                            ? myColors.colorYellow
+                            : myColors.colorGold,
+                        width: 3))),
             child: Text(
               'اسم السورة',
-              style: Theme.of(context).textTheme.headline5,
+              style: Theme.of(context).textTheme.headline6,
             ),
           ),
           Expanded(
@@ -152,9 +160,11 @@ class quranTap extends StatelessWidget {
               separatorBuilder: (_, index) {
                 return Container(
                   margin: EdgeInsets.symmetric(horizontal: 30),
-                  color: Theme.of(context).primaryColor,
+                  color: settingsProvider.isDarkMode() == true
+                      ? myColors.colorYellow
+                      : myColors.colorGold,
                   width: double.infinity,
-                  height: 2,
+                  height: 1,
                 );
               },
             ),

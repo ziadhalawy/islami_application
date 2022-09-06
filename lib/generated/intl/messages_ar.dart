@@ -21,12 +21,19 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "app_title": MessageLookupByLibrary.simpleMessage("إسلامي"),
+        "arabic_lang": MessageLookupByLibrary.simpleMessage("العربية"),
+        "azkar_icon": MessageLookupByLibrary.simpleMessage("الأذكار"),
+        "dark_theme": MessageLookupByLibrary.simpleMessage("غامق"),
+        "english_lang": MessageLookupByLibrary.simpleMessage("الإنجليزية"),
         "hadith_icon": MessageLookupByLibrary.simpleMessage("حديث"),
+        "language_label": MessageLookupByLibrary.simpleMessage("اللغة"),
+        "light_theme": MessageLookupByLibrary.simpleMessage("فاتح"),
         "quran_icon": MessageLookupByLibrary.simpleMessage("قرآن"),
         "radio_icon": MessageLookupByLibrary.simpleMessage("إذاعة"),
-        "sibha_icon": MessageLookupByLibrary.simpleMessage("سبحة")
+        "settings_icon": MessageLookupByLibrary.simpleMessage("الإعدادات"),
+        "sibha_icon": MessageLookupByLibrary.simpleMessage("سبحة"),
+        "theme_label": MessageLookupByLibrary.simpleMessage("الإضاءة")
       };
 }

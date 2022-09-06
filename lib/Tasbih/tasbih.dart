@@ -8,13 +8,11 @@ class sibhaTap extends StatefulWidget {
 
 class _MyHomePageState extends State<sibhaTap> {
   int _counter = 0;
-
   void _incrementCounter() {
     setState(() {
       _counter++;
     });
   }
-
   @override
   Widget build(BuildContext context) {
     List<String> tasbiha = [
@@ -27,31 +25,20 @@ class _MyHomePageState extends State<sibhaTap> {
       'حسبنا الله ونعم الوكيل',
       'اللهم صلي وسلم وبارك على سيدنا محمد وعلى أهل بيته وصحبه وسلم'
     ];
-    String value = " " ;
-    /*for(int i =0 ;i < tasbiha.length ;i++){
-      if(_counter<=34)
-        {
-          value =tasbiha[i];
-        }
-      print(value);
-    }
-*/
-
+    String value = "";
     return Scaffold(
+      backgroundColor: Colors.transparent,
       body: Center(
         child: Column(
-
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-             Text(
-               "$value",
+          children: [
+            Text(
+              "$value",
+              style: Theme.of(context).textTheme.headline2,
             ),
             Text(
               '$_counter',
-              style: Theme
-                  .of(context)
-                  .textTheme
-                  .headline5,
+              style: Theme.of(context).textTheme.headline2,
             ),
           ],
         ),

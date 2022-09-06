@@ -1,11 +1,10 @@
+import 'package:application_islami/Colors.dart';
 import 'package:flutter/material.dart';
 
-class suraFormat extends StatelessWidget {
+class azkarFormat extends StatelessWidget {
   String content;
 
-  int index;
-
-  suraFormat(this.content, this.index);
+  azkarFormat(this.content);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +13,7 @@ class suraFormat extends StatelessWidget {
         color: Colors.white,
       ),
       child: Container(
-
+        alignment: Alignment.centerRight,
         child: Text(
           content,
           textAlign: TextAlign.center,
